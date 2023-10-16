@@ -1,0 +1,13 @@
+
+
+# Docker
+docker compose -f docker-compose-class.yml up
+docker compose -f docker-compose-exec.yml up
+
+
+javac -sourcepath ./src/main/java -d out src/main/java/ru/gb/jcore/homeworks/homework01/Main.java
+
+java -classpath ./out ru/gb/jcore/homeworks/homework01/Main
+
+// Создание документации
+javadoc -d docs -sourcepath src\main\java -cp out -subpackages ru

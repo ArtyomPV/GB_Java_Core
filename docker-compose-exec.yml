@@ -1,0 +1,7 @@
+services:
+  app:
+    image: bellsoft/liberica-openjdk-alpine:11.0.16.1-1
+    command: java -classpath ./out ru/gb/jcore/homeworks/homework01/Main
+#    command: java -classpath ./out ru/gb/jcore/sample/Main
+    volumes:
+      - ./bin:/out
