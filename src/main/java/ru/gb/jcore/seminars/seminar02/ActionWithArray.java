@@ -1,8 +1,30 @@
 package ru.gb.jcore.seminars.seminar02;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class ActionWithArray {
+
+    public static int[] fillArray(int size){
+        int[] array = new int[size];
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(0, 10);
+        }
+        return array;
+    }
+
+    public static void showArray(int[] array){
+        System.out.print("[");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]);
+            if(i != array.length-1){
+                System.out.print(", ");
+            }
+
+        }
+        System.out.println("]");
+    }
 
     public static int[][] fillDiagonalElements(int[][] a) {
         for (int i = 0; i < a.length; i++) {
@@ -82,8 +104,8 @@ public class ActionWithArray {
         return arr;
     }
         public static void pigeonSort(int [] arr){
-        final int min = findValueInArray.findMinValue(arr);
-        final int max = findValueInArray.finMaxValue(arr);
+        final int min = FindValueInArray.findMinValue(arr);
+        final int max = FindValueInArray.finMaxValue(arr);
 
         int[] frequency = new int[max - min +1];
             for (int i = 0; i < arr.length; i++) {
