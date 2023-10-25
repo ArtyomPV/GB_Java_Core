@@ -14,9 +14,7 @@ public class MainApp {
             System.out.println(iterator.next());
         }
 //        while(((Iterator<Ingredient>) latte).hasNext()){
-//            System.out.println(((Iterator<Ingredient>) latte).next());
-//        }
-
-
+//            System.out.println(((Iterator<Ingredient>) latte).next());}
+//
     }
 }
