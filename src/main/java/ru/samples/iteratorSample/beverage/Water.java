@@ -1,0 +1,7 @@
+package ru.samples.iteratorSample.beverage;
+
+public class Water extends Ingredient {
+    public Water(String brand) {
+        super(brand);
+    }
+}
