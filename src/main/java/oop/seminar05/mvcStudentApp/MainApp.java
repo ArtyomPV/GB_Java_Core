@@ -2,15 +2,20 @@ package oop.seminar05.mvcStudentApp;
 
 
 import oop.seminar05.mvcStudentApp.controller.Controller;
+import oop.seminar05.mvcStudentApp.controller.GetModel;
+import oop.seminar05.mvcStudentApp.controller.GetView;
+import oop.seminar05.mvcStudentApp.model.FileModel;
 import oop.seminar05.mvcStudentApp.model.Model;
 import oop.seminar05.mvcStudentApp.model.Student;
 import oop.seminar05.mvcStudentApp.view.View;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainApp {
     public static void main(String[] args) {
+
 
         List<Student> students = new ArrayList<>();
         Student student = new Student("Dima", "Petrov", 21, 125);
@@ -27,9 +32,14 @@ public class MainApp {
         students.add(student4);
         students.add(student5);
 
-        Model model = new Model(students);
-        View view = new View();
+        FileModel fileModel = new FileModel("src/main/resources/StudentsDB.txt");
+//        fileModel.saveStudentToFile(students);
+
+//        GetModel model = new Model(students);
+        GetModel model  = fileModel;
+        GetView view = new View();
         Controller controller = new Controller(view, model);
+
         controller.update();
     }
 }
