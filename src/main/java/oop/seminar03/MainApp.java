@@ -1,7 +1,7 @@
 package oop.seminar03;
 
-import oop.seminar03.studentDomen.Student;
-import oop.seminar03.studentDomen.Teacher;
+import oop.seminar03.Controllers.EmployeeController;
+import oop.seminar03.studentDomen.*;
 import oop.seminar03.studentService.StudentCourse;
 import oop.seminar03.studentService.StudentGroup;
 
@@ -19,7 +19,8 @@ public class MainApp {
         Student student3 = new Student("Lena", "Ginge", 22, 103);
         Student student4 = new Student("Sveta", "Pipko", 21, 112);
         Student student5 = new Student("Alex", "Sidorov", 20, 113);
-        Teacher teacher = new Teacher("Nina", "Ivanov", 47, "Programming");
+        Teacher teacher1= new Teacher("Nina", "Ivanov", 47, "Programming");
+        Teacher teacher2 = new Teacher("Diana", "Akulina", 42, "Programming");
 
         /**
          * Создаем две группы
@@ -75,5 +76,19 @@ public class MainApp {
         Object student02 = new Student("For", "Diter", 25, 132);
 //        System.out.println(student2);
 
+
+        /**
+         * сравнение по Дженерик
+         */
+        PersonComparator<Student> comparatorStudent = new PersonComparator<>();
+        comparatorStudent.compare(student1, student2);
+        PersonComparator<Teacher> comparatorTeacher = new PersonComparator<>();
+        comparatorTeacher.compare(teacher1, teacher2);
+        PersonComparator<Person> comparatorPerson = new PersonComparator<>();
+        comparatorPerson.compare(teacher1, student3);
+
+    Employee employee1 = new Employee("Boris", "Shark", 47);
+    EmployeeController employeeController = new EmployeeController();
+    employeeController.paySalary(employee1);
     }
 }
