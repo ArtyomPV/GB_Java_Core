@@ -38,8 +38,26 @@ public class FileModel implements GetModel {
         return students;
     }
 
-    public void saveStudentToFile(List<Student> students){
-        try (FileWriter fw = new FileWriter(fileName, true)){
+    @Override
+    public void putAllStudents(List<Student> students) {
+        saveStudentsToFile(students);
+        System.out.println("saved");
+    }
+    public  void saveStudentToFile(Student student)  {
+        try (FileWriter fw = new FileWriter(fileName, true)) {
+                        try {
+                            fw.append(student.getFirstName()).append(" ").append(student.getLastName()).append(" ").append(String.valueOf(student.getAge())).append(" ").append(String.valueOf(student.getStudentId()));
+                            fw.append("\n");
+                        } catch (IOException e) {
+                            System.out.println(e.getMessage());
+                        }
+                        fw.flush();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public void saveStudentsToFile(List<Student> students){
+        try (FileWriter fw = new FileWriter(fileName)){
             students.forEach(s -> {
                         try {
                         fw.append(s.getFirstName()).append(" ").append(s.getLastName()).append(" ").append(String.valueOf(s.getAge())).append(" ").append(String.valueOf(s.getStudentId()));

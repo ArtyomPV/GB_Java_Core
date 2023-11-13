@@ -33,13 +33,14 @@ public class MainApp {
         students.add(student5);
 
         FileModel fileModel = new FileModel("src/main/resources/StudentsDB.txt");
-//        fileModel.saveStudentToFile(students);
+//        fileModel.saveStudentsToFile(students);
 
 //        GetModel model = new Model(students);
         GetModel model  = fileModel;
         GetView view = new View();
         Controller controller = new Controller(view, model);
 
-        controller.update();
+//        controller.updateView();
+        controller.run();
     }
 }

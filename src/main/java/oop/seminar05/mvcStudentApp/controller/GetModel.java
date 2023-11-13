@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface GetModel {
     public List<Student> getAllStudents();
-
+    public void putAllStudents(List<Student> students);
 }

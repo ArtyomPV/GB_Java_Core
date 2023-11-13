@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface GetView {
     void printAllStudents(List<Student> students);
+    String prompt(String text);
 }
